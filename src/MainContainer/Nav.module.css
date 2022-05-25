@@ -1,0 +1,73 @@
+.nav{
+ 
+    background: white;
+    padding-left: 10px;
+    position: relative;
+}
+.heddingNav{
+    font-size: 1.2rem;
+    border-bottom: 1px solid #b89898;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.active{
+    border: 1px solid #e6e6e6;
+    background: #e6e6e6;
+ 
+}
+.select{
+    margin-top: 10px;
+    padding:10px;
+    position: relative;
+}
+
+.select:hover,.tableName:hover{
+    border: 1px solid #e6e6e6;
+    background: #e6e6e6;
+    cursor: pointer;
+   
+}
+.selectAdd{
+    display: flex;
+    Justify-content: space-between;
+}
+.addTable{
+    border: 1px solid #a31c1c44;
+    background-color: #d7cfcf;
+    border-radius: 5px;
+    position: fixed;
+    box-shadow: 0 8px 16px -4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    top: 135px;
+    left: 285px;
+    z-index: 1;
+
+}
+
+.text{
+    padding: 5px 35px;
+    margin-top: 15px;
+}
+.btnAddTable{
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    background: #00bcd4;
+    cursor: pointer;
+
+}
+.tableName{
+    list-style:none;
+    margin-left: -50px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+.activeTableName{
+    border: 1px solid #c1aaaa;
+    background: #c1aaaa;
+}
