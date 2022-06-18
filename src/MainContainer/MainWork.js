@@ -3,10 +3,10 @@ import {useState} from 'react'
 
 
 import TableNameComponent from './TableNameComponent'
-import SlectedNavComponent from './SlectedNavComponent'
+
 import styles from './Nav.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPlus} from '@fortawesome/free-solid-svg-icons'
+import WorkDetail from './WorkDetail'
+
 
 function MainWork(){
  const [addTable,setAddTable] = useState(false);
@@ -16,8 +16,6 @@ function MainWork(){
 
             
         <TableNameComponent />
-        
-      
       </div>
     )
 }

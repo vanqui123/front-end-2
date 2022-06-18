@@ -1,11 +1,13 @@
 import { useState,useRef,useEffect} from 'react'
 import styles from './MainWork.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye,faAlignLeft,faPen,faWindowClose, faJournalWhills } from '@fortawesome/free-solid-svg-icons'
-
+import { faEye,faAlignLeft,faPen,faWindowClose, faTimes } from '@fortawesome/free-solid-svg-icons'
+import WorkDetail from './WorkDetail'
 
  function TableWork ({children}){
      const [card,setCard] = useState('');
+     const [detail,setDetail] = useState('');
+     const [showDetail,setShowDetail] = useState(false);
      const [ listCard,setListCard] = useState(()=>{
       const jsonCards =JSON.parse(localStorage.getItem("listCard"+children.index));
       return jsonCards?jsonCards.list:[];
@@ -14,8 +16,6 @@ import { faEye,faAlignLeft,faPen,faWindowClose, faJournalWhills } from '@fortawe
      const [editingText,setEditingText] =useState([]);
     const refItem = useRef();
  
-
-
 useEffect(()=>{
   const arr = [
     {
@@ -51,7 +51,11 @@ const deleteTableWork = (index) =>{
       setEditing(null);
       setEditingText("");
     }
-
+   
+    const showDetailWork = (index) =>{
+      setDetail(listCard[index])
+      setShowDetail(e => !e)
+        }
      return(
         <div className={styles.tableWork} >
                    <input 
@@ -59,6 +63,7 @@ const deleteTableWork = (index) =>{
             value={children.name}
             onChange={e=>{}}
               />
+          
             <div> 
        {
          listCard.map((name,index)=>(
@@ -82,12 +87,14 @@ const deleteTableWork = (index) =>{
                  
                   <div>
                   <span onClick={()=>setEditing(index)}  className={styles.iconEdit}> <FontAwesomeIcon icon={faPen}/></span>
-        <span >  <FontAwesomeIcon className={styles.iconNameWork} icon={faEye} /></span>   
+        <span > 
+           <FontAwesomeIcon onClick = {()=>showDetailWork(index)} className={styles.iconNameWork} icon={faEye} /></span>   
            <FontAwesomeIcon className={styles.iconNameWork} icon={faAlignLeft} />
            <FontAwesomeIcon onClick={()=>deleteTableWork(index)} className={styles.iconClose} icon={faWindowClose} />
            </div>
+        
              </div>  
-          
+             
             )}
                  
            </div>  
@@ -107,11 +114,12 @@ const deleteTableWork = (index) =>{
       onChange={e=>{setCard(e.target.value)}}
       >
           </textarea >
-      
       <div> <button onClick={handelCard}  className={styles.btnAddList}>Thêm thẻ</button></div>   
       </div>
       </div>
+      {showDetail?<WorkDetail children={{id:children.index,name:detail}} />:null}
       </div>
         )
 }
+
 export default TableWork;
