@@ -41,7 +41,7 @@ function TableNameComponent() {
             <TableWork children={{ name, index }} key={index} />
    
             { search===name?(
-            <div style={{position: 'absolute',left: '0',top:'70%'}}>
+            <div style={{position: 'absolute',left: '0',top:'50%'}}>
                        <div> Công việc tìm kiếm</div>
            <TableWork children={{ name, index }}  />
            </div>

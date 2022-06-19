@@ -16,7 +16,7 @@ function WorkDetail({children}){
       const ThingToDo = JSON.parse(localStorage.getItem("ThingToDo"+children.name+children.id))
       return ThingToDo?(ThingToDo):([])
     })
- 
+ console.log('listWork',listWorkDescription);
     const [description,setDescription] = useState(()=>{
       const description=JSON.parse(localStorage.getItem("description"+children.name+children.id));
       return description?(description):("")}) 
@@ -38,7 +38,17 @@ function WorkDetail({children}){
         setWorkDescription("");
         setAddWork(false);
     }
-  
+    const deleteTableWork = (index) =>{
+      if(window.confirm("Bạn có muốn xóa")){
+        const updateTableWork = [...listWorkDescription].filter((tableWork,i)=>i !== index)
+        console.log(updateTableWork);
+        setListWorkDescription(()=>{
+          const ThingToDo = JSON.stringify(updateTableWork)
+          localStorage.setItem("ThingToDo"+children.name+children.id,ThingToDo) 
+          return updateTableWork;
+        });
+    }
+  }
     return(
  
     show?
@@ -51,7 +61,6 @@ function WorkDetail({children}){
         <h3 >Mô tả</h3>
         <div style={{marginLeft:'30px',margintop: '-17px'}}>
         <input 
-           
             className={save?styles.description:styles.afterSave}
             value={description}
              type="text"
@@ -63,7 +72,6 @@ function WorkDetail({children}){
        
       <div style={{  textAlign:'end'}}>
           <button onClick={()=>setAddWork(e=>!e)} className={styles.addWorkButton}>Việc cần làm</button>
-          
             {addWork?
            (
          <div className={styles.addWork}>   
@@ -76,24 +84,20 @@ function WorkDetail({children}){
          />
          <button onClick={handelWorkDescription} className={styles.btnSaveWork}>Save</button>
          </div>
-
          ):null}
             </div>
             <div style={{marginTop: '-10px'}}>
             {listWorkDescription.map((name,index)=>(
               <div  key={index}>
-                <TaskComponent children={name} />
+                <TaskComponent children={{name:name,id:index,nameWork:children.name,idWork:children.id}} />
+                <button onClick={()=>deleteTableWork(index)}>X</button>
                 <WorkItem children={{id:children.id,name:name,nameTable:children.name}}/> 
                 </div>
             ))}
           </div>
-
       <div>
-       
       </div>
       </div>):(null)
-     
-
     )
 
 }

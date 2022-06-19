@@ -13,7 +13,7 @@ function WorkItem({ children }) {
     );
     return workItems ? workItems : [];
   });
-  console.log(listWorkItem.length);
+
   const [showAdd, setShowAdd] = useState(true);
 
   const handelWorkItem = () => {
