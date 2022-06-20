@@ -1,38 +1,43 @@
-.nav{
- 
+.nav {
+
     background: white;
     padding-left: 10px;
     position: relative;
 }
-.heddingNav{
+
+.heddingNav {
     font-size: 1.2rem;
     border-bottom: 1px solid #b89898;
     font-weight: 600;
     padding: 15px;
 }
 
-.active{
+.active {
     border: 1px solid #e6e6e6;
     background: #e6e6e6;
- 
+
 }
-.select{
+
+.select {
     margin-top: 10px;
-    padding:10px;
+    padding: 10px;
     position: relative;
 }
 
-.select:hover,.tableName:hover{
+.select:hover,
+.tableName:hover {
     border: 1px solid #e6e6e6;
     background: #e6e6e6;
     cursor: pointer;
-   
+
 }
-.selectAdd{
+
+.selectAdd {
     display: flex;
     Justify-content: space-between;
 }
-.addTable{
+
+.addTable {
     border: 1px solid #a31c1c44;
     background-color: #d7cfcf;
     border-radius: 5px;
@@ -47,11 +52,15 @@
 
 }
 
-.text{
-    padding: 5px 35px;
-    margin-top: 15px;
+.text {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-.btnAddTable{
+
+.btnAddTable {
     border: 1px solid #00bcd4;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 0px;
@@ -61,13 +70,51 @@
     cursor: pointer;
 
 }
-.tableName{
-    list-style:none;
+
+.tableName {
+    list-style: none;
     margin-left: -50px;
     padding: 5px 30px;
     cursor: pointer;
 }
-.activeTableName{
+
+.activeTableName {
     border: 1px solid #c1aaaa;
     background: #c1aaaa;
+}
+
+.selectTable {
+    position: absolute;
+    left: 3%;
+}
+
+.formSearch {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: .8rem;
+    text-align: center;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 35px;
+    font-weight: bold;
+    transition: width 0.4s ease-in-out;
+}
+
+.formSearch:focus {
+    width: 100%;
+}
+.searchResult{
+    position: absolute;
+    top: 20%;
+    left: 3%;
+}
+.titleSearch{
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
 }

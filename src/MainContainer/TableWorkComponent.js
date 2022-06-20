@@ -103,7 +103,6 @@ const deleteTableWork = (index) =>{
            ))
                   }
        <div style={{marginTop:"20px"}}>
-      
       <textarea  
       ref={refItem}
       className={styles.addCard}

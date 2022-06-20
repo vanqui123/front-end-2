@@ -24,12 +24,14 @@ function TableNameComponent() {
   };
   return (
     <div>
+      <div className={styles.titleSearch}>Tìm Kiếm Công Việc</div>
       <div className={styles.selectTable}>
-        <div className="input-group">
-          <input 
-          type="search" placeholder="Search" 
-          value={search}
-          onChange={(e)=>{setSearch(e.target.value)}}
+
+        <div>
+          <input className={styles.formSearch}
+            type="search" placeholder="Search"
+            value={search}
+            onChange={(e) => { setSearch(e.target.value) }}
           />
         </div>
       </div>
@@ -37,19 +39,18 @@ function TableNameComponent() {
         <div className={stylesMain.tableChildren}>
           {listNameTableChild.map((name, index) => (
             <div key={index} >
-          
-            <TableWork children={{ name, index }} key={index} />
-   
-            { search===name?(
-            <div style={{position: 'absolute',left: '0',top:'50%'}}>
-                       <div> Công việc tìm kiếm</div>
-           <TableWork children={{ name, index }}  />
-           </div>
-           ):(null)}
+
+              <TableWork children={{ name, index }} key={index} />
+
+              {search === name ? (
+                <div className={styles.searchResult}>
+                  <TableWork children={{ name, index }} />
+                </div>
+              ) : (null)}
             </div>
-        
+
           ))}
-          <div>
+          <div className={stylesMain.borderChildren}>
             <input
               value={nameTableChild}
               ref={refItem}
@@ -67,6 +68,7 @@ function TableNameComponent() {
                 onClick={handelAddNameTableChild}
                 className={stylesMain.btnAddList}
               >
+               
                 Thêm Danh Sách
               </button>
             </div>

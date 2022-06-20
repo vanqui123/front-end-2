@@ -1,7 +1,11 @@
 .mainWork{
     margin-left: 20px;
 }
-
+.borderChildren{
+    border: 2px solid #04eecf;
+    border-radius: 10px;
+  
+}
 .tableWork{
     border: 1px solid #ebecf0;
     border-radius: 5px;
@@ -9,22 +13,25 @@
     margin-right: 10px;
 }
 .title{
-       font-size: 1.1rem;
-       width: 190px;
-       background: #ebecf0;
-       border: 1px solid #ebecf0;
-       border-radius: 5px;
-       padding:10px;
-       height:15px;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(10, 3, 31);
+    font-weight: bold;
+    width: 190px;
+    background: #02bacf;
+    border: 1px solid #ebecf0;
+    border-radius: 5px;
+    padding: 15px;
+    height:15px;
 }
 .nameWork{
-    border: 1px solid #fff;
-    background: #fff;
+    border: 1px solid #181818;
+    background-color: antiquewhite;
     margin: 5px;
+    color: #181818;
     border-radius: 5px;
-    padding: 25px;
+    padding: 35px;
     position: relative;
-
 }
 .nameWork:hover {
     cursor: pointer;
@@ -36,7 +43,6 @@
 }
 .tableChildren{
     display: flex;
-    padding-top:40px;
 }
 .iconNameWork{
     font-size: 0.9rem;
@@ -54,10 +60,6 @@
 
 .name{
     font-size: 1.1rem;
-    border: 1px solid #fff;
-
-
-
 }
 .editName{
     display: flex;
@@ -206,4 +208,8 @@
     height: 40px;
     width: 360px;
     font-size: 1.2rem;
+}
+.search{
+    position: absolute;
+    right: 0;
 }

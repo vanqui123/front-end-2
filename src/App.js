@@ -6,10 +6,10 @@ import WorkDetail from './MainContainer/WorkDetail'
 
 function App() {
   return (
-   <div>
+    <div className="background">
      <HeaderComponent />
      
-     <div className="MainContainer">
+     <div className="MainContainer" style={{marginLeft:"400px"}}>
      <MainWork />
    
   

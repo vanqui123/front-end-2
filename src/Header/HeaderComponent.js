@@ -4,7 +4,7 @@ import styles from'./Header.module.css';
 function HeaderComponent(){
     return(
         <div  className={styles.header}>
-            Công Việc của bạn
+            CÔNG VIỆC CỦA BẠN
         <div>
     
         </div>
