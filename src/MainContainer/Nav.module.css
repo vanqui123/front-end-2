@@ -85,7 +85,7 @@
 
 .selectTable {
     position: absolute;
-    left: 3%;
+    left: 60px;
 }
 
 .formSearch {
@@ -107,13 +107,13 @@
 }
 .searchResult{
     position: absolute;
-    top: 20%;
-    left: 3%;
+    top: 180px;
+    left: 60px;
 }
 .titleSearch{
     position: absolute;
-    top: 10%;
-    left: 3%;
+    top: 95px;
+    left: 60px;
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
